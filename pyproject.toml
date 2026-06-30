@@ -1,0 +1,23 @@
+[project]
+name = "slice-matic"
+version = "2.0.0"
+description = "SliceMatic PizzaFlow ordering system — Gradio MVP (Stage 2, cart-based)"
+requires-python = ">=3.11"
+dependencies = [
+    "gradio>=5.0",
+]
+
+[project.scripts]
+slice-matic = "main:main"
+
+[dependency-groups]
+dev = [
+    "pytest>=8.0",
+]
+
+[tool.hatch.build.targets.wheel]
+packages = ["config", "core", "ui"]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
